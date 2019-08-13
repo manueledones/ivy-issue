@@ -1,0 +1,21 @@
+Hello World
+
+
+<ng-container *ngIf="{
+  myObservable1: simpleService.myObservable1$ | async,
+  myObservable2: simpleService.myObservable2$ | async
+ } as values">
+  <ng-container *ngIf="values.myObservable1 as obs1">
+    <ng-container *ngIf="values.myObservable2 as obs2">
+
+      <app-wrapper>
+        <ng-template #myContent>
+
+          obs1: {{obs1}}
+          obs2: {{obs2}}
+        </ng-template>
+      </app-wrapper>
+
+    </ng-container>
+  </ng-container>
+</ng-container>
